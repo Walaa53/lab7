@@ -26,23 +26,31 @@ library(mosaicData)
 ```
     
 Your answer:
+The data is observational as the description states that is based on age, smoking, and mortality, which are all observable events and not produced via experiments.
+
+
 
 2.  
 ```{r observations}
+nrow(Whickham)
 
 ```
 
 Your answer;
+obs 1314  var 3
+Each row represents age, whether or not it is a smoker, and is it alive or not
 
 3.  
 
 ```{r number_variables}
-
+names(Whickham)
 ```
 
-Your answer:  
+Your answer:  there are 3 variables, "0utcome","smoker", and "age"
+
 
 ```{r var_type}
+
 
 ```
 
