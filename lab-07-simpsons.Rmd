@@ -47,33 +47,38 @@ names(Whickham)
 ```
 
 Your answer:  there are 3 variables, "0utcome","smoker", and "age"
-
-
+outcome (factor)
+age(integer)
+smoker(factor)
 ```{r var_type}
-
-
+class(Whickham$outcome)
+class(Whickham$age)
+class(Whickham$smoker)
 ```
 
-Your answer: 
+Your answer: I expect that health will deteriorate with the passage of time, too, the incidence of cancer, and if he continues to smoke, he may lead to death.
 
 ```{r plot_outcome}
-
+ggplot(Whickham, aes(x = smoker))
+geom_bar()
 ```
 
 
 ```{r plot_smoker}
-
+ggplot(Whickham, aes(x = smoker)) +
+  geom_bar()
 ```
 
 ```{r plot_age}
-
+ggplot(Whickham, aes(x = age)) +
+  geom_boxplot()
 ```
 
 
 4. 
 
 ```{r plot_smokeVSincome_1}
-
+ggplot(data=Whickham, aes(x=smoker, y=outcome, color=outcome)) + geom_bar(stat="identity")
 ```
 
 Knit, commit, and push to github.
