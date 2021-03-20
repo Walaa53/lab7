@@ -88,18 +88,30 @@ Knit, commit, and push to github.
 ```{r plot_smokeVSincome_2}
 Whickham %>%
   count(smoker, outcome)
+502+230
+230/732
 ```
 
+smoker (732) N0 --- 31,4  (Dead)  >>(68.6) Alive
+smoker (582) Yes --- 23,8  (Dead)  >>(76.2) Alive
+
+I does not expected this result because now the most died pepole not smoker.
 6.
 
 ```{r age_cat}
-
+Whickham <- Whickham %>% mutate(age_cat = case_when(age <= 44 ~ "18-14", age > 44 & age <= 64 ~ "45-64" , age > 64 ~ "65+" ))
 ```
 
 7. 
 
 ```{r plot_smokeVSincome_3}
-
+ggplot(data=Whickham, aes(x=outcome, y=smoker,color=smoker, fill=age_cat)) + geom_bar(stat="identity") +facet_wrap(~age_cat)
 ```
+
+The percentage of live nonsmokers between 18-64 is higher than that of non-smokers, unlike the 65+ category, the percentage of live nonsmokers is higher than the percentage of smokers.
+
+
+what changes > the category of the age it's appear to us and we see the most of dead pepole not smoker in age (65+) ...but in age (45-64) and (18-44) the most dead pepole are smoker that is relationship between the smoking and helath not clearly but can say that your helath will be change to worst if you be smoker .
+
 
 Knit, commit, and push to github.
